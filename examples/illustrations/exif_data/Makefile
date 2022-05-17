@@ -51,12 +51,12 @@ clean-illustration-nosrc:
 
 query-select-files.md: \
   $(top_srcdir)/.venv.done.log \
-  exif_data.json \
+  exif_data.jsonld \
   query-select-files.sparql
 	source $(top_srcdir)/venv/bin/activate \
 	  && case_sparql_select \
 	    --disallow-empty-results \
 	    _$@ \
 	    query-select-files.sparql \
-	    exif_data.json
+	    exif_data.jsonld
 	mv _$@ $@

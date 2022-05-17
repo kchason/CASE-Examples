@@ -40,3 +40,11 @@ jobs:
       run: make clean
     - name: Run tests
       run: make check
+    # Run the CASE validation job to confirm all of the examples in examples/illustrations/ are 
+    # conformant CASE. Note, this only runs against files with the extension "jsonld"
+    - name: CASE Export Validation
+      uses: kchason/case-validation-action@v2.1
+      with:
+        case-path: ./examples/illustrations/**/
+        case-version: "case-0.6.0"
+        extension-filter: "jsonld"
