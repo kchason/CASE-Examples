@@ -25,11 +25,11 @@ all:
 	  --directory src
 	cp src/generated-README.md README.md
 	diff \
-	  $(illustration_name).json \
-	  src/generated-$(illustration_name).json \
+	  $(illustration_name).jsonld \
+	  src/generated-$(illustration_name).jsonld \
 	  || cp \
-	    src/generated-$(illustration_name).json \
-	    $(illustration_name).json
+	    src/generated-$(illustration_name).jsonld \
+	    $(illustration_name).jsonld
 	$(MAKE) \
 	  --file ../src/illustration-nosrc.mk
 
@@ -37,7 +37,7 @@ check:
 	$(MAKE) \
 	  --directory src \
 	  generated-README.md \
-	  generated-$(illustration_name).json
+	  generated-$(illustration_name).jsonld
 	$(MAKE) \
 	  --directory src \
 	  check
@@ -45,9 +45,9 @@ check:
 	  --file ../src/illustration-nosrc.mk \
 	  check
 	diff \
-	  src/generated-$(illustration_name).json \
-	  $(illustration_name).json \
-	  || (echo "UPDATE:examples/illustrations/$(illustration_name)/Makefile:The generated $(illustration_name).json does not match the Git-tracked $(illustration_name).json.  If the above reported changes look fine, run 'cp src/generated-$(illustration_name).json $(illustration_name).json' to get a file ready to commit to Git." >&2 ; exit 1)
+	  src/generated-$(illustration_name).jsonld \
+	  $(illustration_name).jsonld \
+	  || (echo "UPDATE:examples/illustrations/$(illustration_name)/Makefile:The generated $(illustration_name).jsonld does not match the Git-tracked $(illustration_name).jsonld.  If the above reported changes look fine, run 'cp src/generated-$(illustration_name).jsonld $(illustration_name).jsonld' to get a file ready to commit to Git." >&2 ; exit 1)
 	diff \
 	  src/generated-README.md \
 	  README.md \

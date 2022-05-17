@@ -41,7 +41,7 @@ all: \
   $(example_name)_validation-unstable.ttl
 
 $(example_name)_validation.ttl: \
-  $(example_name).json \
+  $(example_name).jsonld \
   $(RDF_TOOLKIT_JAR) \
   $(drafting_ttl) \
   $(top_srcdir)/.venv.done.log
@@ -65,7 +65,7 @@ $(example_name)_validation.ttl: \
 	mv _$@ $@
 
 $(example_name)_validation-develop.ttl: \
-  $(example_name).json \
+  $(example_name).jsonld \
   $(RDF_TOOLKIT_JAR) \
   $(drafting_ttl) \
   $(top_srcdir)/.venv.done.log \
@@ -91,7 +91,7 @@ $(example_name)_validation-develop.ttl: \
 	mv _$@ $@
 
 $(example_name)_validation-unstable.ttl: \
-  $(example_name).json \
+  $(example_name).jsonld \
   $(RDF_TOOLKIT_JAR) \
   $(drafting_ttl) \
   $(top_srcdir)/.venv.done.log \
