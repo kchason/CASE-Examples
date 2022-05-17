@@ -45,6 +45,6 @@ jobs:
     - name: CASE Export Validation
       uses: kchason/case-validation-action@v2.1
       with:
-        case-path: ./examples/illustrations/
+        case-path: ./examples/illustrations/**/
         case-version: "case-0.6.0"
         extension-filter: "jsonld"
