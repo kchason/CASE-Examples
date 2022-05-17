@@ -23,8 +23,8 @@ def test_messages_have_sent_times() -> None:
 
     graph = rdflib.Graph()
     srcdir_path = pathlib.Path(__file__).parent
-    message_json_path = srcdir_path / "message.json"
-    assert message_json_path.exists(), "message.json not found in same directory as test."
+    message_json_path = srcdir_path / "message.jsonld"
+    assert message_json_path.exists(), "message.jsonld not found in same directory as test."
 
     # TODO - Remove 'format' parameter when an rdflib release with this PR is issued:
     # https://github.com/RDFLib/rdflib/pull/1403
